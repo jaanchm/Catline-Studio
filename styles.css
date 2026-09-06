@@ -1,0 +1,726 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Poppins:wght@400;500;600;700&display=swap');
+
+:root{
+  --bg: #f8ede9;
+  --green: #84a266;
+  --green-dark: #6f8c54;
+  --ink: #4a4a4a;
+  --black: #262626;
+  --salmon: #e1b1a8;
+  --card-line: #2b2b2b;
+}
+
+*{box-sizing:border-box;}
+
+html{scroll-behavior:smooth;}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'EB Garamond', serif;
+  overflow-x:hidden;
+}
+
+section, .page-content{
+  padding:70px 24px 90px;
+  max-width:1000px;
+  margin:0 auto;
+  position:relative;
+}
+
+/* ---------- Top navigation (multipágina) ---------- */
+.topnav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:16px 30px;
+  background:var(--bg);
+  border-bottom:1px solid #ecd9d2;
+  position:sticky;
+  top:0;
+  z-index:50;
+  flex-wrap:wrap;
+  gap:10px;
+}
+.topnav .brand{
+  font-family:'Caveat', cursive;
+  font-weight:700;
+  font-size:1.9rem;
+  color:var(--green);
+  text-decoration:none;
+  line-height:1;
+}
+.topnav .links{
+  display:flex;
+  gap:22px;
+  flex-wrap:wrap;
+}
+.topnav .links a{
+  font-family:'Poppins',sans-serif;
+  font-weight:600;
+  font-size:0.78rem;
+  letter-spacing:0.5px;
+  color:var(--black);
+  text-decoration:none;
+  padding:6px 2px;
+  border-bottom:2px solid transparent;
+}
+.topnav .links a:hover, .topnav .links a.active{
+  border-bottom:2px solid var(--green);
+  color:var(--green-dark);
+}
+
+/* ---------- Logo (used on home + contacto) ---------- */
+.logo-wrap{text-align:center;}
+.logo-cat{
+  font-family:'Caveat', cursive;
+  font-weight:700;
+  font-size:6.5rem;
+  color:var(--green);
+  line-height:1;
+  display:inline-block;
+}
+.logo-sub{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  margin-top:-6px;
+}
+.logo-studio{
+  font-family:'Poppins',sans-serif;
+  font-weight:700;
+  letter-spacing:3px;
+  font-size:1.9rem;
+  color:var(--black);
+}
+.logo-divider{width:2px; height:34px; background:var(--black);}
+.logo-tagline{
+  font-family:'Caveat',cursive;
+  font-weight:600;
+  font-style:italic;
+  font-size:1.7rem;
+  color:var(--ink);
+}
+
+/* ---------- Hero (index) ---------- */
+/* ========================================================
+   NOTA: Este archivo integra el fragmento de CSS que compartiste
+   (hero, ceo-card, nav-buttons, section-head) + los ajustes de
+   sticky footer y responsive para teléfono.
+   Si tu styles.css original tiene más reglas (:root, .topnav,
+   tipografías, etc.) que no me mostraste, pégalas y las agrego
+   sin romper esta estructura.
+   ======================================================== */
+
+/* ---------- Sticky footer (base para toda la página) ---------- */
+html, body{
+  height:100%;
+}
+body{
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+  margin:0;
+}
+main{
+  flex:1 0 auto;
+}
+footer{
+  flex-shrink:0;
+}
+
+/* ---------- Hero ---------- */
+.hero{padding-top:50px;}
+.location{
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  gap:10px;
+  margin:60px 0 50px;
+  font-size:1.25rem;
+  color:var(--green-dark);
+  text-align:center;
+  font-style:italic;
+}
+.location svg{margin-top:4px; flex-shrink:0;}
+
+
+.hero-main{
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  gap:56px;
+  flex-wrap:wrap;
+  position:relative;
+}
+
+
+.photo-block{position:relative; text-align:center;}
+.photo-frame{
+  width:236px; height:193px;
+  border-radius:14px;
+  overflow:hidden;
+  border:1px solid #e7d3cd;
+  box-shadow:0 2px 10px rgba(0,0,0,0.06);
+}
+.photo-frame img{width:100%; height:100%; object-fit:cover; display:block;}
+.ceo-card{
+  margin-top:14px;
+  border:1px solid var(--card-line);
+  border-radius:4px;
+  padding:8px 20px;
+  font-family:'Poppins',sans-serif;
+  line-height:1.5;
+}
+.ceo-card .role{font-weight:600; font-size:0.8rem; letter-spacing:1px; color:var(--black);}
+.ceo-card .name{font-weight:700; font-size:0.82rem; letter-spacing:0.5px; color:#070707; text-decoration:underline;}
+
+
+.nav-buttons{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+.nav-buttons a{
+  display:flex; align-items:center; justify-content:center;
+  border:1px solid var(--card-line);
+  border-radius:4px;
+  padding:14px 26px;
+  font-family:'Poppins',sans-serif;
+  font-weight:600;
+  font-size:0.85rem;
+  letter-spacing:0.5px;
+  color:var(--black);
+  text-decoration:underline;
+  background:var(--bg);
+  transition:background .2s ease, transform .2s ease;
+  white-space:nowrap;
+}
+.nav-buttons a:hover{background:#f1ddd6; transform:translateY(-2px);}
+.nav-buttons .full{grid-column:1 / -1;}
+
+
+.scribble{position:absolute; width:70px; height:70px; opacity:0.9;}
+.scribble.top-left{top:-40px; left:-40px;}
+.scribble.top-right{top:-30px; right:-100px;}
+.scribble.bottom-right{bottom:-40px; right:-70px;}
+
+
+/* ---------- Section heading (cat icon) ---------- */
+.section-head{text-align:center; margin-bottom:50px;}
+.cat-icon{width:78px; height:auto; margin-bottom:6px;}
+.section-head h2{
+  font-family:'EB Garamond', serif;
+  font-weight:400;
+  color:var(--green-dark);
+  font-size:2.4rem;
+  margin:6px 0 2px;
+}
+.section-head h3{
+  font-family:'EB Garamond', serif;
+  font-weight:400;
+  color:var(--green-dark);
+  font-size:1.9rem;
+  margin:0 0 6px;
+}
+.section-head .note{
+  font-size:1.05rem;
+  color:var(--green-dark);
+  text-decoration:underline;
+  font-style:italic;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+/* ---------- Tablets ---------- */
+@media (max-width: 900px){
+  .hero-main{
+    gap:32px;
+  }
+  .nav-buttons{
+    gap:10px;
+  }
+}
+
+/* ---------- Teléfonos ---------- */
+@media (max-width: 600px){
+  .topnav{
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+    padding:12px 0;
+  }
+  .topnav .links{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:8px 14px;
+  }
+
+  .hero{
+    padding-top:20px;
+  }
+  .location{
+    font-size:1rem;
+    margin:30px 0 24px;
+    padding:0 20px;
+  }
+
+  .hero-main{
+    flex-direction:column;
+    align-items:center;
+    gap:30px;
+  }
+
+  .photo-frame{
+    width:180px;
+    height:150px;
+  }
+
+  .nav-buttons{
+    grid-template-columns:1fr;
+    width:100%;
+    max-width:280px;
+    padding:0 20px;
+  }
+  .nav-buttons a{
+    padding:12px 20px;
+    white-space:normal;
+  }
+
+  .scribble{
+    display:none; /* en móvil suelen estorbar más que decorar */
+  }
+
+  .section-head h2{
+    font-size:1.8rem;
+  }
+  .section-head h3{
+    font-size:1.4rem;
+  }
+
+  footer{
+    text-align:center;
+    padding:16px 20px;
+  }
+  footer > div{
+    flex-direction:column;
+    gap:6px;
+  }
+}
+
+/* ---------- Acerca de / Sobre mí ---------- */
+.about-copy p{
+  font-size:1.28rem;
+  line-height:1.65;
+  color:var(--green-dark);
+  text-align:justify;
+  max-width:760px;
+  margin:0 auto 26px;
+}
+
+.cta-btn{
+  display:flex; align-items:center; justify-content:center; gap:14px;
+  border:1px solid var(--green-dark);
+  border-radius:4px;
+  padding:16px 34px;
+  max-width:420px;
+  margin:60px auto 0;
+  font-family:'Poppins',sans-serif;
+  font-weight:600;
+  font-size:0.95rem;
+  letter-spacing:0.5px;
+  color:var(--black);
+  text-decoration:underline;
+  background:transparent;
+}
+.cta-btn:hover{background:#f1ddd6;}
+.cta-btn svg{width:22px; height:22px;}
+
+/* ---------- Sobre mí extra ---------- */
+.bio-wrap{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:50px;
+  flex-wrap:wrap;
+  margin-bottom:50px;
+}
+.bio-wrap .photo-frame{width:220px; height:220px; border-radius:50%;}
+
+/* ---------- Servicios ---------- */
+/* ========================================================
+   NOTA: Este archivo integra el fragmento de CSS que compartiste
+   (hero, ceo-card, nav-buttons, section-head) + los ajustes de
+   sticky footer y responsive para teléfono.
+   Si tu styles.css original tiene más reglas (:root, .topnav,
+   tipografías, etc.) que no me mostraste, pégalas y las agrego
+   sin romper esta estructura.
+   ======================================================== */
+
+/* ---------- Sticky footer (base para toda la página) ---------- */
+html, body{
+  height:100%;
+}
+body{
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+  margin:0;
+}
+main,
+.page-content{
+  flex:1 0 auto;
+}
+footer{
+  flex-shrink:0;
+}
+
+/* ---------- Hero ---------- */
+.hero{padding-top:50px;}
+.location{
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  gap:10px;
+  margin:60px 0 50px;
+  font-size:1.25rem;
+  color:var(--green-dark);
+  text-align:center;
+  font-style:italic;
+}
+.location svg{margin-top:4px; flex-shrink:0;}
+
+
+.hero-main{
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  gap:56px;
+  flex-wrap:wrap;
+  position:relative;
+}
+
+
+.photo-block{position:relative; text-align:center;}
+.photo-frame{
+  width:236px; height:193px;
+  border-radius:14px;
+  overflow:hidden;
+  border:1px solid #e7d3cd;
+  box-shadow:0 2px 10px rgba(0,0,0,0.06);
+}
+.photo-frame img{width:100%; height:100%; object-fit:cover; display:block;}
+.ceo-card{
+  margin-top:14px;
+  border:1px solid var(--card-line);
+  border-radius:4px;
+  padding:8px 20px;
+  font-family:'Poppins',sans-serif;
+  line-height:1.5;
+}
+.ceo-card .role{font-weight:600; font-size:0.8rem; letter-spacing:1px; color:var(--black);}
+.ceo-card .name{font-weight:700; font-size:0.82rem; letter-spacing:0.5px; color:#070707; text-decoration:underline;}
+
+
+.nav-buttons{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+.nav-buttons a{
+  display:flex; align-items:center; justify-content:center;
+  border:1px solid var(--card-line);
+  border-radius:4px;
+  padding:14px 26px;
+  font-family:'Poppins',sans-serif;
+  font-weight:600;
+  font-size:0.85rem;
+  letter-spacing:0.5px;
+  color:var(--black);
+  text-decoration:underline;
+  background:var(--bg);
+  transition:background .2s ease, transform .2s ease;
+  white-space:nowrap;
+}
+.nav-buttons a:hover{background:#f1ddd6; transform:translateY(-2px);}
+.nav-buttons .full{grid-column:1 / -1;}
+
+
+.scribble{position:absolute; width:70px; height:70px; opacity:0.9;}
+.scribble.top-left{top:-40px; left:-40px;}
+.scribble.top-right{top:-30px; right:-100px;}
+.scribble.bottom-right{bottom:-40px; right:-70px;}
+
+
+/* ---------- Section heading (cat icon) ---------- */
+.section-head{text-align:center; margin-bottom:50px;}
+.cat-icon{width:78px; height:auto; margin-bottom:6px;}
+.section-head h2{
+  font-family:'EB Garamond', serif;
+  font-weight:400;
+  color:var(--green-dark);
+  font-size:2.4rem;
+  margin:6px 0 2px;
+}
+.section-head h3{
+  font-family:'EB Garamond', serif;
+  font-weight:400;
+  color:var(--green-dark);
+  font-size:1.9rem;
+  margin:0 0 6px;
+}
+.section-head .note{
+  font-size:1.05rem;
+  color:var(--green-dark);
+  text-decoration:underline;
+  font-style:italic;
+}
+
+/* ---------- Servicios ---------- */
+.service-block{margin-bottom:56px;}
+.service-title-row{
+  display:flex; align-items:center; gap:16px; justify-content:center;
+  flex-wrap:wrap; margin-bottom:6px;
+}
+.service-title-row h4{
+  font-family:'EB Garamond', serif;
+  font-weight:400;
+  color:var(--green-dark);
+  font-size:2rem;
+  margin:0;
+}
+.service-icon{width:52px; height:52px; flex-shrink:0;}
+.service-price{
+  text-align:center;
+  font-family:'Poppins',sans-serif;
+  font-weight:700;
+  font-size:1rem;
+  color:var(--black);
+  margin-bottom:22px;
+}
+.service-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:28px 40px;
+  align-items:center;
+}
+.service-item{display:flex; align-items:center; gap:14px; font-size:1.1rem; color:var(--ink);}
+.service-item img, .service-item svg{width:48px; height:48px; flex-shrink:0;}
+.service-item .txt strong{display:block; font-weight:600; color:var(--black);}
+.service-sub{
+  text-align:center;
+  font-size:1.05rem;
+  color:var(--ink);
+  max-width:640px;
+  margin:14px auto;
+  line-height:1.5;
+}
+.flyer-imgs{display:flex; justify-content:center; gap:30px; margin:26px 0; flex-wrap:wrap;}
+.flyer-imgs img{width:150px; border-radius:6px; box-shadow:0 4px 14px rgba(0,0,0,0.15);}
+.option-line{font-size:1.05rem; max-width:640px; margin:8px auto; text-align:center;}
+.option-line strong{color:var(--black);}
+
+.mockup-row{display:flex; justify-content:center; align-items:center; gap:40px; margin-top:24px; flex-wrap:wrap;}
+.mockup-row img{width:150px; border-radius:6px;}
+.mockup-range{text-align:center; font-family:'Poppins',sans-serif; font-weight:600; font-size:1rem; margin-bottom:18px;}
+
+hr.divider{border:none; border-top:1px solid #e2cec8; margin:60px 0;}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+/* ---------- Tablets ---------- */
+@media (max-width: 900px){
+  .hero-main{
+    gap:32px;
+  }
+  .nav-buttons{
+    gap:10px;
+  }
+}
+
+/* ---------- Teléfonos ---------- */
+@media (max-width: 600px){
+  .topnav{
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+    padding:12px 0;
+  }
+  .topnav .links{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:8px 14px;
+  }
+
+  .hero{
+    padding-top:20px;
+  }
+  .location{
+    font-size:1rem;
+    margin:30px 0 24px;
+    padding:0 20px;
+  }
+
+  .hero-main{
+    flex-direction:column;
+    align-items:center;
+    gap:30px;
+  }
+
+  .photo-frame{
+    width:180px;
+    height:150px;
+  }
+
+  .nav-buttons{
+    grid-template-columns:1fr;
+    width:100%;
+    max-width:280px;
+    padding:0 20px;
+  }
+  .nav-buttons a{
+    padding:12px 20px;
+    white-space:normal;
+  }
+
+  .scribble{
+    display:none; /* en móvil suelen estorbar más que decorar */
+  }
+
+  .section-head h2{
+    font-size:1.8rem;
+  }
+  .section-head h3{
+    font-size:1.4rem;
+  }
+
+  footer{
+    text-align:center;
+    padding:16px 20px;
+  }
+  footer > div{
+    flex-direction:column;
+    gap:6px;
+  }
+
+  .page-content{
+    padding:0 20px;
+  }
+  .service-title-row h4{
+    font-size:1.5rem;
+  }
+  .service-icon{
+    width:40px; height:40px;
+  }
+  .service-grid{
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+  .service-item{
+    font-size:1rem;
+  }
+  .flyer-imgs img,
+  .mockup-row img{
+    width:120px;
+  }
+  hr.divider{
+    margin:40px 0;
+  }
+}
+
+/* ---------- Cotizacion ---------- */
+.quote-title{
+  text-align:center;
+  font-family:'Caveat',cursive;
+  font-weight:700;
+  color:var(--green);
+  font-size:3rem;
+  margin-bottom:30px;
+}
+.quote-box{
+  border:2px solid var(--green);
+  border-radius:26px;
+  max-width:520px;
+  margin:0 auto;
+  padding:40px 36px 46px;
+  text-align:center;
+}
+.quote-box img.cat-icon{width:60px;}
+.quote-flow{
+  font-family:'Caveat',cursive;
+  font-weight:600;
+  font-size:1.3rem;
+  color:var(--green-dark);
+  line-height:1.4;
+  margin-bottom:26px;
+}
+.quote-item{margin:26px 0;}
+.quote-item .icon{font-size:1.8rem; margin-bottom:8px;}
+.quote-item p{font-size:1.05rem; color:var(--ink); margin:0; line-height:1.5;}
+
+/* ---------- Marketing / Contacto ---------- */
+.marketing-banner{
+  background:var(--green);
+  color:#fff;
+  text-align:center;
+  padding:20px;
+  font-family:'Poppins',sans-serif;
+  font-weight:700;
+  letter-spacing:1px;
+  font-size:1rem;
+}
+.marketing-body{text-align:center; padding:80px 24px 60px;}
+.marketing-body .logo-cat{font-size:5.2rem;}
+.marketing-body .logo-studio{font-size:1.5rem;}
+.marketing-body .logo-tagline{font-size:1.3rem;}
+.marketing-question{
+  font-family:'Poppins',sans-serif;
+  font-weight:700;
+  color:var(--green-dark);
+  font-size:1.15rem;
+  letter-spacing:0.5px;
+  line-height:1.6;
+  margin:60px 0 18px;
+}
+.marketing-answer{
+  font-family:'Poppins',sans-serif;
+  font-weight:700;
+  color:var(--green-dark);
+  font-size:1.15rem;
+  letter-spacing:0.5px;
+  margin-bottom:50px;
+}
+.ig-link{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:64px; height:64px;
+  border:2px solid var(--black);
+  border-radius:16px;
+  color:var(--black);
+  text-decoration:none;
+}
+
+footer{
+  background:var(--black);
+  color:#fff;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:16px 30px;
+  font-family:'Poppins',sans-serif;
+  font-size:0.75rem;
+  flex-wrap:wrap;
+  gap:10px;
+}
+footer a{color:#fff; text-decoration:none; margin-right:20px;}
+footer a:hover{text-decoration:underline;}
+
+@media (max-width: 640px){
+  .logo-cat{font-size:4.2rem;}
+  .logo-studio{font-size:1.3rem;}
+  .logo-tagline{font-size:1.2rem;}
+  .hero-main{flex-direction:column; align-items:center;}
+  .nav-buttons{grid-template-columns:1fr;}
+  .service-grid{grid-template-columns:1fr;}
+  section, .page-content{padding:50px 18px 70px;}
+  .topnav{justify-content:center; text-align:center;}
+}
